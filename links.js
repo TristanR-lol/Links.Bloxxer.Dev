@@ -1,5 +1,5 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-const supabase = createClient(process.env.ANON_KEY, process.env.PUBLISHABLE_KEY);
+const supabase = createClient(process.env.NEXT_PUBLIC_ANON_KEY, process.env.NEXT_PUBLIC_PUBLISHABLE_KEY);
 
 async function AddItem(Link) {
     const { data } = await supabase.from("shortlinks").select("id").order("id", { ascending: false }).limit(1);
